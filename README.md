@@ -1,5 +1,7 @@
 # RX-JS
 
+### Sección 1
+
 > [!NOTE] > **Observer Cold vs Hot**
 > Cuando la data es producida por el observable en si mismo,
 > es considerado un **Cold Observable**. Pero cuando la data  
@@ -9,6 +11,28 @@
 
 > [!TIP]
 >
-> _Se debe tener cuidado con los intervalos corriendo en el background._
+> - _Se debe tener cuidado con los intervalos corriendo en el background._
 >
-> _Esto por menor que sea genera fugas de memoria y no es el escenario esperado._
+> - _Esto por menor que sea genera fugas de memoria y no es el escenario esperado._
+
+<br>
+
+---
+
+### Sección 2
+
+> [!NOTE]
+>
+> **Funciones para la creación de observables**
+>
+> > - of
+> > - fromEvent
+> > - interval
+> > - timer
+> > - asyncScheduler
+>
+> ---
+
+<br>
+
+---
