@@ -1,36 +1,22 @@
-import { Observable, Observer, Subject } from "rxjs";
+import { of } from "rxjs";
 
-const observer: Observer<any> = {
-  next: (value: any) => console.log(`Next: ${value}`),
-  error: (error: any) => console.warn(`Error: ${error}`),
-  complete: () => console.info(`Complete!`),
-};
+// const obs$ = of([1, 2, 3, 4, 5, 6]);
+const obs$ = of(
+  [1, 2, 3, 4, 5, 6],
+  { a: 1, b: 2, c: 4 },
+  function () {
+    console.log("Funcion dentro del of");
+  },
+  false,
+  Promise.resolve(true)
+);
 
-const interval$ = new Observable<number>((subs) => {
-  const intervalID = setInterval(() => {
-    subs.next(Math.random());
-  }, 1000);
+console.log("Inicio del observable");
 
-  return () => {
-    clearInterval(intervalID);
-    console.log("Cleanner");
-  };
+const subscription = obs$.subscribe({
+  next: (ele) => console.log(`Element: ${ele}`),
+  error: (e) => console.error(e),
+  complete: () => console.info("Done!"),
 });
 
-/**
- * 1- casteo multiple(misma informacion a todos los subs)
- * 2- también es un observer
- */
-const subject$ = new Subject();
-
-const subscription = interval$.subscribe(subject$);
-
-const subscription1 = subject$.subscribe(observer);
-const subscription2 = subject$.subscribe(observer);
-
-setTimeout(() => {
-  subject$.next(10);
-  subject$.complete();
-
-  subscription.unsubscribe();
-}, 4000);
+console.log("Fin del observable");
