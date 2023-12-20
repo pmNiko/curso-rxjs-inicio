@@ -1,4 +1,4 @@
-import { Observable, Observer, of } from "rxjs";
+import { Observable, Observer, Subject } from "rxjs";
 
 const observer: Observer<any> = {
   next: (value: any) => console.log(`Next: ${value}`),
@@ -6,29 +6,31 @@ const observer: Observer<any> = {
   complete: () => console.info(`Complete!`),
 };
 
-// const obs$ = Observable.create()
-const obs$ = new Observable<string>((subs) => {
-  subs.next("Click");
-  subs.next("Click");
-  subs.next("Click");
+const interval$ = new Observable<number>((subs) => {
+  const intervalID = setInterval(() => {
+    subs.next(Math.random());
+  }, 1000);
 
-  const clicks = undefined;
-
-  //   clicks.name = "Click";
-
-  subs.complete();
+  return () => {
+    clearInterval(intervalID);
+    console.log("Cleanner");
+  };
 });
 
-// obs$.subscribe({
-//   next(value) {
-//     console.log(`Next ${value}`);
-//   },
-//   error(err) {
-//     console.warn("Error: " + err);
-//   },
-//   complete() {
-//     console.info("done");
-//   },
-// });
+/**
+ * 1- casteo multiple(misma informacion a todos los subs)
+ * 2- también es un observer
+ */
+const subject$ = new Subject();
 
-obs$.subscribe(observer);
+const subscription = interval$.subscribe(subject$);
+
+const subscription1 = subject$.subscribe(observer);
+const subscription2 = subject$.subscribe(observer);
+
+setTimeout(() => {
+  subject$.next(10);
+  subject$.complete();
+
+  subscription.unsubscribe();
+}, 4000);
