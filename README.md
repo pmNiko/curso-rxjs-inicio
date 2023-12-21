@@ -31,7 +31,27 @@
 > > - timer
 > > - asyncScheduler
 >
-> ---
+> ## _Estas funciones abstraen la manera en la que instaciamos un observer_
+
+<br>
+
+---
+
+### Sección 3
+
+> [!NOTE]
+>
+> **Operadores**
+>
+> > - map
+> > - pluck
+> > - mapTo
+> > - filter
+> > - tap
+> > - reduce
+> > - scan
+>
+> ## \_\_
 
 <br>
 
