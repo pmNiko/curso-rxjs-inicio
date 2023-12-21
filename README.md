@@ -56,3 +56,23 @@
 <br>
 
 ---
+
+### Sección 4
+
+> [!NOTE]
+>
+> **Operadores no tan comunes**
+>
+> > - take
+> > - first
+> > - takeWhile
+> > - skip
+> > - distinct
+> > - distinctUntilChanged
+> > - distinctUntilKeyChanged
+>
+> ## _Esto son operadores que si bien no son tan utilizados son importantes_
+
+<br>
+
+---
