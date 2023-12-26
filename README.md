@@ -96,3 +96,25 @@
 <br>
 
 ---
+
+<br>
+
+### Sección 6
+
+> [!NOTE]
+>
+> **Peticiones Ajax**
+>
+> > - Conceptos básicos de una petición ajax
+> > - Manejo de errores
+> > - Fetch API
+> > - getJson
+> > - Ajax
+> > - Diferencia entre getJson y Ajax
+> > - PUT, POST, DELETE, GET
+>
+> ## \_
+
+<br>
+
+---
