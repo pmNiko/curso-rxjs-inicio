@@ -1,7 +1,7 @@
-import { catchError, of } from "rxjs";
+import { of } from "rxjs";
 import { AjaxError, ajax } from "rxjs/ajax";
 
-const url = `https://httpbinXXX.org//delay/1`;
+const url = `https://httpbin.org//delay/1`;
 
 const hanlderError = (resp: AjaxError) => {
   console.warn("err: ", resp.message);
@@ -12,15 +12,31 @@ const hanlderError = (resp: AjaxError) => {
   });
 };
 
-// const obs$ = ajax.getJSON(url).pipe(catchError(hanlderError));
-// const obs2$ = ajax(url).pipe(catchError(hanlderError));
-// obs2$.subscribe((val) => console.log("Ajax ", val));
+// ajax
+//   .post(
+//     url,
+//     {
+//       id: 1,
+//       name: "Nikolas",
+//     },
+//     {
+//       Authorization: "Bearer " + "1234567890abcdef",
+//     }
+//   )
+//   .subscribe(console.log);
 
-const obs$ = ajax.getJSON(url);
-const obs2$ = ajax(url);
+ajax({
+  url,
+  method: "POST",
+  headers: {
+    Authorization: "Bearer " + "1234567890abcdef",
+  },
+  body: {
+    id: 1,
+    name: "Nikolas",
+  },
+}).subscribe(console.log);
 
-obs$.pipe(catchError(hanlderError)).subscribe({
-  next: (val) => console.log("Next ", val),
-  error: (err) => console.log("Error ", err),
-  complete: () => console.log("Complete!"),
-});
+/**
+ * Todo esto podria combinarse con el catchError de RX JS
+ */
