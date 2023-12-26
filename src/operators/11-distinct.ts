@@ -1,4 +1,8 @@
-import { distinctUntilChanged, from } from "rxjs";
+import { distinct, from, of } from "rxjs";
+
+const numbers = of(1, 1, 1, 3, 3, 2, 2, 4, 4, 5, 5, 1);
+
+// numbers.pipe(distinct()).subscribe(console.log);
 
 interface Character {
   name: string;
@@ -13,9 +17,6 @@ const characrters: Character[] = [
   },
   {
     name: "Zero",
-  },
-  {
-    name: "Dr. Willy",
   },
   {
     name: "Dr. Willy",
@@ -37,10 +38,6 @@ const characrters: Character[] = [
   },
 ];
 
-// from(characrters)
-//   .pipe(distinct((character) => character.name))
-//   .subscribe(console.log);
-
 from(characrters)
-  .pipe(distinctUntilChanged((prev, curr) => prev.name === curr.name))
+  .pipe(distinct((character) => character.name))
   .subscribe(console.log);

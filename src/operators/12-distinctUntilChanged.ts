@@ -1,4 +1,8 @@
-import { distinctUntilChanged, from } from "rxjs";
+import { distinct, distinctUntilChanged, from, of } from "rxjs";
+
+const numbers = of(1, 1, 1, 3, 3, 2, 2, 4, 4, 5, 5, 1);
+
+// numbers.pipe(distinct()).subscribe(console.log);
 
 interface Character {
   name: string;
