@@ -76,3 +76,23 @@
 <br>
 
 ---
+
+<br>
+
+### Sección 5
+
+> [!NOTE]
+>
+> **Operadores de tiempo**
+>
+> > - debounceTime
+> > - throttleTime
+> > - sampleTime
+> > - sample
+> > - auditTime
+>
+> ## _Operadores del tiempo, los cuales se enfocan en trabajar de alguna manera con intervalos de tiempo._
+
+<br>
+
+---
