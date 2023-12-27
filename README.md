@@ -138,3 +138,24 @@
 <br>
 
 ---
+
+<br>
+
+### Sección 8
+
+> [!NOTE]
+>
+> **Operadores combinados**
+>
+> > - startWith
+> > - endWith
+> > - concat
+> > - merge
+> > - combineLatest
+> > - forkJoin
+>
+> ## métodos para combinar las emisiones de los observables o bien varios observables entre sí.
+
+<br>
+
+---
