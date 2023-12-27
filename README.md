@@ -118,3 +118,23 @@
 <br>
 
 ---
+
+<br>
+
+### Sección 7
+
+> [!NOTE]
+>
+> **Operadores de transformación**
+>
+> > - mergeAll
+> > - mergeMap
+> > - switchMap
+> > - concatMap
+> > - exhaustMap
+>
+> ## Estos son operadores de aplanamiento de datos.
+
+<br>
+
+---
